@@ -1,32 +1,42 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class = "content">
+      <router-view/>
     </div>
-    <router-view/>
+    <div class = "my-footer">
+      <my-nav></my-nav>
+    </div>
   </div>
 </template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import MyNav from './components/footer/MyNav'
+export default {
+  name: 'app',
+  components: {
+    MyNav
+  }
 }
-
-#nav {
-  padding: 30px;
+</script>
+<style scoped>
+#app{
+  position: absolute;
+  /* 让整个div被撑起来 */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.content{
+  flex: 1;
+  width: 100%;
+  height: calc( 100vh - 50px );
+  position: absolute;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.my-footer{
+  width: 100%;
+  position: fixed;
+  bottom: -4px;
+  z-index: 9;
 }
 </style>

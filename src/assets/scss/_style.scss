@@ -1,0 +1,97 @@
+// colors
+$colors:(
+    "primary": #8fc7bd,
+    "light": #a3a3a3,
+    "white": #fff,
+    "grey": rgb(190, 185, 185)
+);
+// 背景颜色
+@each $colorKey,$color in $colors{
+    .bg-#{$colorKey}{
+        background-color: $color;
+    }
+}
+// 字体颜色
+@each $colorKey,$color in $colors{
+    .text-#{$colorKey}{
+        color: $color;
+    }
+}
+
+// font
+$font-sizes:(
+    xxs: 0.6154rem, // 8px
+    xs: 0.7692rem, // 10px
+    sm: 0.9231rem, // 12px
+    md: 1rem, // 13px
+    lg: 1.0769rem, // 14px
+    xl: 1.2308rem, // 16px
+    xxl: 1.5385rem // 20px
+);
+@each $fontKey,$font in $font-sizes{
+    .font-sizes-#{$fontKey}{
+        font-size: $font;
+    }
+}
+
+// sprite
+.sprite{
+    background: url(../image/content/rating.png) no-repeat 0 0;
+    background-size: 55px 121px;
+    display: inline-block;
+    &.sprite-five{
+        width: 55px;
+        height: 11px;
+        background-position: 0% 0%;
+    }
+    &.sprite-four-half{
+        width: 55px;
+        height: 11px;
+        background-position: 0% 10%;
+    }
+    &.sprite-four{
+        width: 55px;
+        height: 11px;
+        background-position: 0% 20%;
+    }
+    &.sprite-three-half{
+        width: 55px;
+        height: 11px;
+        background-position: 0% 30%;
+    }
+    &.sprite-three{
+        width: 55px;
+        height: 11px;
+        background-position: 0% 40%;
+    }
+    &.sprite-two-half{
+        width: 55px;
+        height: 11px;
+        background-position: 0% 50%;
+    }
+    &.sprite-two{
+        width: 55px;
+        height: 11px;
+        background-position: 0% 60%;
+    }
+    &.sprite-one-half{
+        width: 55px;
+        height: 11px;
+        background-position: 0% 70%;
+    }
+    &.sprite-one{
+        width: 55px;
+        height: 11px;
+        background-position: 0% 80%;
+    }
+    &.sprite-one-half{
+        width: 55px;
+        height: 11px;
+        background-position: 0% 90%;
+    }
+    &.sprite-zero{
+        width: 55px;
+        height: 11px;
+        background-position: 0% 100%;
+    }
+}
